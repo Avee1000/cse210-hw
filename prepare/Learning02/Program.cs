@@ -19,6 +19,8 @@ class Program
         job2._startYear = 2022;
         job2._endYear = 2023;
         job2.Display();
+        Console.WriteLine();
+
 
         //create a new instance to call on the resume class
         Resume resume = new Resume();

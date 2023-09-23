@@ -20,7 +20,7 @@ public class Journal
             Entry entry = _entries[i];
             entry.Display();
         }   
-        Console.WriteLine("I\nncrease your console size to get the best view.");
+        Console.WriteLine("\nIncrease your console size to get the best view.");
 
     }
     public void SaveToFile(string file)
@@ -29,9 +29,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                userFile.WriteLine($"\nDATE: {entry._date}");
-                userFile.WriteLine($"PROMPT:{entry._promptText}");
-                userFile.WriteLine($"ENTRY:{entry._entryText}");
+                userFile.WriteLine($"\nDATE: {entry._date}\nTIME: {entry._time}\nPROMPT:{entry._promptText}\nENTRY:{entry._entryText}");
             }
             Console.WriteLine("Your file has been saved.");
         }
@@ -53,6 +51,6 @@ public class Journal
 
             // Console.WriteLine($"DATE: {date}\nPROMPT: {prompt}\nENTRY: {entry}");
         }
-        Console.WriteLine("I\nncrease your console size to get the best view.");
+        Console.WriteLine("\nIncrease your console size to get the best view.");
     } 
 }

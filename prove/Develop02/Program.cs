@@ -37,10 +37,12 @@ class Program
 
                 //Lets get the current date of entry using the datetime construct
                 DateTime dt = DateTime.Now;
-                string currentDate = dt.ToString();
+                string currentDate = dt.ToLongDateString();
+                string currentTime = dt.ToLongTimeString();
                 //use the _entryText member variable in the Entry class 
                 //to change "currentDate" to an Entry.
                 anEntry._date = currentDate;
+                anEntry._time = currentTime;
 
                 //ask for the user's entry in response to the above prompt
                 Console.Write("\nWrite here: ");
@@ -60,7 +62,7 @@ class Program
 
             else if (choice == 3)
             {
-                Console.Write("\nWhat will you like to name the file(ADD <.txt>): ");
+                Console.Write("\nWhat will you like to name the file(ADD .txt/.csv): ");
                 string userFileName = Console.ReadLine();   
                 
                 //use the user's entry as the parameter for the filename
@@ -69,7 +71,7 @@ class Program
 
             else if (choice == 4)
             {
-                Console.Write("\nFile name (Please add the file type <.txt>): ");
+                Console.Write("\nFile name (Please add the file type .txt/.csv): ");
                 string loadFile = Console.ReadLine();
 
                 //use the user's entry as the parameter for the file to be loaded

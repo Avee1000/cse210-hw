@@ -80,7 +80,7 @@ class Program
             {
                 // promGen.printPrompt();
         
-                Console.Write("Write a prompt here: ");
+                Console.Write("\nWrite a prompt here: ");
                 string customPrompt = Console.ReadLine();
 
                 //Let the user add extra prompts

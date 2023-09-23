@@ -20,6 +20,8 @@ public class Journal
             Entry entry = _entries[i];
             entry.Display();
         }   
+        Console.WriteLine("I\nncrease your console size to get the best view.");
+
     }
     public void SaveToFile(string file)
     {
@@ -51,6 +53,6 @@ public class Journal
 
             // Console.WriteLine($"DATE: {date}\nPROMPT: {prompt}\nENTRY: {entry}");
         }
-        Console.WriteLine("Increase your console size to get the best view.");
+        Console.WriteLine("I\nncrease your console size to get the best view.");
     } 
 }

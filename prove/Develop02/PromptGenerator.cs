@@ -22,7 +22,7 @@ public class PromptGenerator
         Console.WriteLine("Your prompts has been added to the prompt list.");
     }
 
-//getting a random prompt
+    //getting a random prompt
     public string GetRandomPrompt()
     {
         //call the random function
@@ -35,7 +35,7 @@ public class PromptGenerator
 
     public void printPrompt()
     {
-              //print out all the prompt in the class list(not really needed)
+        //print out all the prompt in the class list(not really needed)
         foreach (string prompt in _prompts)
         {
             Console.WriteLine(prompt);

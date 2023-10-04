@@ -5,13 +5,10 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        
-
-
         //call the prompt generator
         PromptGenerator promGen = new PromptGenerator();
        
-                //call on the default prompts
+        //call on the default prompts
         promGen.StorePrompt();
 
         Console.WriteLine($"Welcome to the Journal Program!");

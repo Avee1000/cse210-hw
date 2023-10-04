@@ -10,7 +10,6 @@ public class Journal
     {
         _entries.Add(newEntry);
         Console.WriteLine("Your entry has been added to your Journal");
-
     }
 
     public void DisplayAll()

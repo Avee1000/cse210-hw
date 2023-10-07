@@ -5,30 +5,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random random = new Random();
-        List<string> wrd = new List<string>(); 
-        string phrase = "The quick brown fox jumps over the lazy dog.";
-        string[] words = phrase.Split(' ');
+        List<string> animatedStrings = new List<string>();
+        animatedStrings.Add("|");
+        animatedStrings.Add("/");
+        animatedStrings.Add("_");
+        animatedStrings.Add("\\");
+        animatedStrings.Add("|");
+        animatedStrings.Add("/");
+        animatedStrings.Add("_");
+        animatedStrings.Add("\\");
 
-        foreach (var word in words)
+        DateTime start = DateTime.Now;
+        DateTime end = start.AddSeconds(20);
+        do
         {
-            wrd.Add(word);
-            Console.WriteLine(word);
-        }
-        Console.WriteLine(string.Join(' ', wrd));
-
-        Console.Write("Choose an option:");
-        string option = Console.ReadLine();
-        int num = int.Parse(option);
-
-        int hiddenCount = 0;
-
-        while (hiddenCount < 3)
-        {
-            var randomIndex = random.Next(wrd.Count);
-            var wor = wrd[randomIndex];
-            Console.WriteLine(randomIndex);
-            Console.WriteLine(wor);
-        }   
+            DateTime CurrentTime = DateTime.Now;
+            foreach (string i in animatedStrings)
+            {
+                if (CurrentTime < end)
+                {
+                    Console.Write(i);
+                    Thread.Sleep(500);
+                    Console.Write("\b \b");
+                }
+            }
+        } while (DateTime.Now < end);        
     }
 }

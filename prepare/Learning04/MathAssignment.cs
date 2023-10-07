@@ -7,7 +7,7 @@ public class MathAssignment : Assignment
 
     public MathAssignment() : base()
     {
-
+        SetStudentName("Moses");
     }
 
     public MathAssignment(string name, string topic, string textBook, string problem) : base(name, topic)

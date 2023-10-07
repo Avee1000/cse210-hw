@@ -10,7 +10,7 @@ class Program
         Console.WriteLine(assign.GetSummary());
 
         MathAssignment math = new MathAssignment();
-        math.SetStudentName("Roberto Rodriguez");
+        // math.SetStudentName("Roberto Rodriguez");
         math.SetTopic("Multiplication");
         math.SetSection("Section 10.3");
         math.SetProblems("Problems 8-19");

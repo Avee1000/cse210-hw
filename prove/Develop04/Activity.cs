@@ -107,6 +107,7 @@ public class Activity
         {
             Console.Write(".");
             Thread.Sleep(500);
+            
         }
     }
 }

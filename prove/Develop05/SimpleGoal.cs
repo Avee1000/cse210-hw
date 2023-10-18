@@ -2,7 +2,6 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    private string _goalName = "Simpple Goal";
     private bool _isComplete;
 
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
@@ -12,10 +11,18 @@ public class SimpleGoal : Goal
 
     public override void RecordEvent()
     {
-        if (_isComplete ==  true)
+        //The logis here is - the user will only ever want to record an event if he/she has accomplished any goal, ergo, it is "true"
+        if (_isComplete == false) // or if(!_isComplete)
         {
-            Console.WriteLine($"Event recorded for the Simple Goal: {GetName()}");
+            _isComplete = true;
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
         }
+        //The logic here is that - you're implying that any input the user gives means that he completed the goal in the index of the input
+    }
+
+    public void SetComplete(bool complete)
+    {
+        _isComplete = complete;
     }
 
     public override bool IsComplete()
@@ -25,7 +32,6 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"{_goalName}: {GetName()}\n{GetDescription()}\n{GetPoints()}";    
+        return $"Simple Goal:|{GetName()}|{GetDescription()}|{GetPoints()}|{IsComplete()}\n";    
     }
-
 }

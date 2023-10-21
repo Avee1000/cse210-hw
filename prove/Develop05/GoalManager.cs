@@ -159,7 +159,7 @@ public class GoalManager
 
         // Unicode characters for decoration
         char star = '\u2605'; // ★ (Black Star)
-        char cup = '\u1F3C'; // ♥ (Black Heart)
+        char cup = '\u1F3C'; 
         char flower = '\u273F'; // ✿ (Flower)
         GetScore(); // Assuming this method sets _score to the initial score
         Console.WriteLine($"\nYou have {GetScore()} points");

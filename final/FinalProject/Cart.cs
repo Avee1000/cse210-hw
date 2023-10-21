@@ -130,10 +130,10 @@ public class Cart
     {
     }
 
-    // public decimal CalculateTotalPrice()
-    // {
-    //     return 
-    // }
+    public void CalculateTotalPrice()
+    {
+
+    }
 
     public void SaveOrderHistoryToFile()
     {

@@ -17,7 +17,7 @@ public class ShoppingCartUI
             char star = '\u2605';
             Console.WriteLine($"{star}   Welcome to the Online Shopping cart System  {star}\n");
             Console.Write("1. Display all products available for sale\n2. Add Products to your Cart\n3. Remove Items from your Cart\n4. View the items in your Cart\n" +
-            "5. Make a Payment\n6. View past orders\n\nPlease Select One of the following: ");
+            "5. Make a Payment\n6. View past orders\n7. Quit\nPlease Select One of the following: ");
             string user = Console.ReadLine();
             int choice = int.Parse(user);
 

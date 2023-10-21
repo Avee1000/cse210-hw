@@ -61,6 +61,11 @@ public class ChecklistGoal : Goal
         _amountCompleted = amountCompleted;
     }
 
+    public int GetAmountCompleted()
+    {
+        return _amountCompleted;
+    }
+    
     public override bool IsComplete()
     {
         return _amountCompleted == GetTarget();

@@ -249,7 +249,14 @@ public class GoalManager
                 if (goalName is ChecklistGoal check)
                 {
                     check.RecordEvent();
-                    _score = GetScore() + check.GetPoints() + check.GetBonus();
+                    if (check.GetAmountCompleted() == check.GetTarget())
+                    {
+                        _score = GetScore() + check.GetPoints() + check.GetBonus();
+                    }
+                    else
+                    {
+                        _score = GetScore() + check.GetPoints();
+                    }
                     Console.WriteLine($"You now have {_score} points");
                     SetScore(_score);
                 }

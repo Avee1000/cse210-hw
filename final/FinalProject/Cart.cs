@@ -219,7 +219,6 @@ public class Cart
                 ShowSpinner();
                 Console.Clear();
             }
-
         }
     }
 
@@ -260,20 +259,28 @@ public class Cart
 
     public void LoadOrderHistoryFromFile()
     {
-        string[] lines = System.IO.File.ReadAllLines("Orders.txt");
-        Console.Clear();
-        ShowSpinner();
-        for (int i = 1; i < lines.Length; i++)
+    
+        try
         {
-            if (lines.Count() == 0)
+            string[] lines = System.IO.File.ReadAllLines("Orders.txt");
+            Console.Clear();
+            ShowSpinner();
+            foreach (string p in lines)
             {
-                Console.WriteLine("YOU HAVE NO PREVIOUS ORDERS. GO ON AND SHOP!!!!!");
-                Console.Clear();
+                if (lines.Length == 0)
+                {
+                    Console.WriteLine("YOU HAVE NO PREVIOUS ORDERS. GO ON AND SHOP!!!!!");
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine(p);
+                }
             }
-            else
-            {
-                Console.WriteLine(lines[i]);
-            }
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("YOU HAVE NO PREVIOUS ORDERS. GO ON AND SHOP!!!!!");
         }
         Console.WriteLine("Please click any button to go to the Main Menu: ");
         Console.ReadLine();
@@ -286,6 +293,7 @@ public class Cart
         char star = '\u2605';
         for (int i = 0; i < _products.Count; i++)
         {
+            _products[i].SetQuantityBought(_products[i].GetQuantity());
             Console.WriteLine($"{star}   " + _products[i].GetProductInfo());
         }
     }
@@ -306,9 +314,6 @@ public class Cart
             {
                 Console.WriteLine($"({i + 1}). " + _orderedProducts[i].GetProductInfo());
             }
-            Console.WriteLine("Please click any button to go to the Main Menu: ");
-            Console.ReadLine();
-            Console.Clear();
         }
 
     }

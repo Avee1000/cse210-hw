@@ -38,12 +38,15 @@ public class ShoppingCartUI
             else if (choice == 3)
             {
                 DisplayCartContent();
+                Console.WriteLine("Please click any button to go to the Main Menu: ");
+                Console.ReadLine();
+                Console.Clear();
             }
 
             else if (choice == 4)
             {
                 DisplayCartContent();
-                Console.Write("What item would you like to remove from your cart : ");
+                Console.Write("\nWhat item would you like to remove from your cart : ");
                 string item = Console.ReadLine();
                 int product = int.Parse(item) - 1;
                 cart.RemoveFromCart(product);
@@ -52,7 +55,6 @@ public class ShoppingCartUI
             else if (choice == 5)
             {
                 DisplayTotalPrice();
-
             }
 
             else if (choice == 6)
@@ -73,15 +75,13 @@ public class ShoppingCartUI
         cart.DisplayAll();
         Console.WriteLine("Please click any button to go to the Main Menu: ");
         Console.ReadLine();
+        Console.Clear();
     }
 
     public void DisplayCartContent()
     {
         cart.DisplayCart();
-    }
 
-    public void DisplayPaymentConfirmation()
-    {
     }
 
     public void DisplayTotalPrice()
@@ -101,20 +101,19 @@ public class ShoppingCartUI
 
             if (amount < cart.CalculateTotalPrice())
             {
-                Console.WriteLine("PAYMENT UNSUCCESSFUL!!!!\nYOU DON'T HAVE ENOUGH MONEY TO PAY FOR THE ITEMS IN YOUR CART.");
+                Console.WriteLine("PAYMENT UNSUCCESSFUL !!!!\nYOU DON'T HAVE ENOUGH MONEY TO PAY FOR THE ITEMS IN YOUR CART.");
                 cart.ShowSpinner();
                 Console.Clear();
             }
             else
             {
                 decimal change = amount - cart.CalculateTotalPrice();
-                Console.WriteLine($"PAYMENT SUCCESSFUL!!!!!\nYOUR CHANGE IS ${change} ");
+                Console.WriteLine($"PAYMENT SUCCESSFUL !!!!!\nYOUR CHANGE IS ${change} ");
                 cart.SaveOrderHistoryToFile(amount, change);
                 Console.WriteLine("\nTHE ITEMS YOU PAID FOR ARE NO LONGER IN YOUR CART.");
                 cart.ShowSpinner();
                 Console.Clear();
             }
-
         }
     }
 

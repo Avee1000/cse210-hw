@@ -101,14 +101,14 @@ public class ShoppingCartUI
 
             if (amount < cart.CalculateTotalPrice())
             {
-                Console.WriteLine("YOU DON'T HAVE ENOUGH MONEY TO PAY FOR THE ITEMS IN YOUR CART.");
+                Console.WriteLine("PAYMENT UNSUCCESSFUL!!!!\nYOU DON'T HAVE ENOUGH MONEY TO PAY FOR THE ITEMS IN YOUR CART.");
                 cart.ShowSpinner();
                 Console.Clear();
             }
             else
             {
                 decimal change = amount - cart.CalculateTotalPrice();
-                Console.WriteLine($"YOUR CHANGE IS ${change} ");
+                Console.WriteLine($"PAYMENT SUCCESSFUL!!!!!\nYOUR CHANGE IS ${change} ");
                 cart.SaveOrderHistoryToFile(amount, change);
                 Console.WriteLine("\nTHE ITEMS YOU PAID FOR ARE NO LONGER IN YOUR CART.");
                 cart.ShowSpinner();

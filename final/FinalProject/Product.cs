@@ -7,13 +7,17 @@ public abstract class Product
     private string _description;
     private decimal _price;
     private string _type;
+    private int _quantity;
 
-    public Product(string name, string description, decimal price, string type)
+    private int _quantityBought;
+
+    public Product(string name, string description, decimal price, string type, int quantity)
     {
         _name = name;
         _description = description;
         _price = price;
         _type = type;
+        _quantity = quantity;
     }
 
     public string GetName()
@@ -54,6 +58,26 @@ public abstract class Product
     public void SetProductType(string type)
     {
         _type = type;
+    }
+
+    public int GetQuantity()
+    {
+        return _quantity;
+    }
+
+    public void SetQuantity(int quantity)
+    {
+        _quantity = quantity;
+    }
+
+    public int GetQuantityBought()
+    {
+        return _quantityBought;
+    }
+
+    public void SetQuantityBought(int bought)
+    {
+        _quantityBought = bought;
     }
 
     // public abstract string GetPaymentHistory();

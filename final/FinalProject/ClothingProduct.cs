@@ -1,13 +1,13 @@
 using System;
 
 public class ClothingProduct : Product
-{   
+{
     private string _size;
     private string _color;
     private string _material;
 
-    public ClothingProduct(string name, decimal price, string description,  string type, string size, string color, string material) :
-    base(name, description, price, type)
+    public ClothingProduct(string name, decimal price, string description, string type, int quantity, string size, string color, string material) :
+    base(name, description, price, type, quantity)
     {
         _size = size;
         _color = color;
@@ -18,7 +18,7 @@ public class ClothingProduct : Product
     {
         return _size;
     }
-    
+
     public void SetSize(string size)
     {
         _size = size;
@@ -46,14 +46,14 @@ public class ClothingProduct : Product
 
     public override string ShowAvailableProducts()
     {
-        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
-        $"|| DESCRIPTION: {GetDescription()} || \n SIZE: {GetSize()} || COLOR: {GetColor()} || MATERIAL: {GetMaterial()}";
+        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} || QUANTITY: {GetQuantity()} " +
+        $"|| DESCRIPTION: {GetDescription()} || \n SIZE: {GetSize()} || COLOR: {GetColor()} || MATERIAL: {GetMaterial()}\n";
     }
 
     public override string GetProductInfo()
     {
         SetProductType("Clothing");
         return $"PRODUCT TYPE: {GetProductType()} || PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
-        $"|| SIZE: {GetSize()} || COLOR: {GetColor()} || MATERIAL: {GetMaterial()} || DESCRIPTION: {GetDescription()}\n";
+        $"|| SIZE: {GetSize()} || COLOR: {GetColor()} || MATERIAL: {GetMaterial()} || DESCRIPTION: {GetDescription()}\n     QUANTITY: {GetQuantityBought()}";
     }
 }

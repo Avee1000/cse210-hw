@@ -1,11 +1,11 @@
 using System;
 
 public class FoodProduct : Product
-{   
+{
     private string _expiryDate;
 
-    public FoodProduct(string name, decimal price, string description, string type, string date) :
-    base(name, description, price, type)
+    public FoodProduct(string name, decimal price, string description, string type, int quantity, string date) :
+    base(name, description, price, type, quantity)
     {
         _expiryDate = date;
     }
@@ -14,7 +14,7 @@ public class FoodProduct : Product
     {
         return _expiryDate;
     }
-    
+
     public void SetExpiryDate(string date)
     {
         _expiryDate = date;
@@ -22,7 +22,7 @@ public class FoodProduct : Product
 
     public override string ShowAvailableProducts()
     {
-        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
+        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} || QUANTITY: {GetQuantity()} " +
         $"|| DESCRIPTION: {GetDescription()} || EXPIRY DATE: {GetExpiryDate()}\n ";
     }
 
@@ -30,6 +30,6 @@ public class FoodProduct : Product
     {
         SetProductType("Food");
         return $"PRODUCT TYPE: {GetProductType()} || PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
-        $"|| DESCRIPTION: {GetDescription()} || EXPIRY DATE: {GetExpiryDate()}\n";
+        $"|| DESCRIPTION: {GetDescription()} || EXPIRY DATE: {GetExpiryDate()}\n     QUANTITY: {GetQuantityBought()}";
     }
 }

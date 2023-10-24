@@ -1,11 +1,11 @@
 using System;
 
 public class ToyProduct : Product
-{   
+{
     private string _ageRange;
 
-    public ToyProduct(string name, decimal price, string description, string type, string age) :
-    base(name, description, price, type)
+    public ToyProduct(string name, decimal price, string description, string type, int quantity, string age) :
+    base(name, description, price, type, quantity)
     {
         _ageRange = age;
     }
@@ -14,7 +14,7 @@ public class ToyProduct : Product
     {
         return _ageRange;
     }
-    
+
     public void SetAgeRange(string age)
     {
         _ageRange = age;
@@ -22,7 +22,7 @@ public class ToyProduct : Product
 
     public override string ShowAvailableProducts()
     {
-        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
+        return $"PRODUCT: {GetName()} || PRICE: ${GetPrice()} || QUANTITY: {GetQuantity()} " +
         $"|| DESCRIPTION: {GetDescription()} || AGE RANGE: {GetAgeRange()}\n ";
     }
 
@@ -30,6 +30,6 @@ public class ToyProduct : Product
     {
         SetProductType("Toy");
         return $"PRODUCT TYPE: {GetProductType()} || PRODUCT: {GetName()} || PRICE: ${GetPrice()} " +
-        $"|| AGE RANGE: {GetAgeRange()} || DESCRIPTION: {GetDescription()}\n";
+        $"|| AGE RANGE: {GetAgeRange()} || DESCRIPTION: {GetDescription()}\n     QUANTITY: {GetQuantityBought()}";
     }
 }
